@@ -1,27 +1,23 @@
-        <div class='background-blur'></div>
         <div class="imageUploadDiv">
             <header>
-                UPLOAD IMAGES <span> X </span>
+               <span class="previous_window"> &#8678; </span> UPLOAD IMAGES <span class="close_window"> X </span>
             </header>
             <div class="preview">
                 <p>No images currently selected for upload.</p>
             </div>
             <div class="image_list"></div>
 
-            <form id='uploadImage'  enctype='multipart/form-data'>
                 <div class="controls">
                     <div class="upload-btn-wrapper">
                         <button class="btn">Select Images</button>
                         <input id="select_file" type='file'  multiple accept=".png, .jpg, .jpeg"  />
                     </div>
-                    <input type="submit" value="Upload Image" class="btn">
+                    <input type="submit" value="Post Ad." class="btn">
                 </div>
-            </form>
             <!-- p element with id msg to display success msg --> 
             <p id='msg'></p>
-        </div>
-    </body>
-    
+        </div>   
+
     <script>
         const input = document.querySelector('#select_file');
         const preview = document.querySelector('.preview');
@@ -39,6 +35,7 @@
         
         function updateImageDisplay() 
         {
+           imageScroller.innerHTML="";
             count=0;
             while (preview.firstChild)
             {
@@ -157,7 +154,15 @@
             {
                 
                     count-=decreamentVal;
-                    if(count===0) return;
+                    if(count===0) 
+                    {
+                        alert("Advertisement successfully uploaded");
+                        $('.background-blur').css({'display':'none','opacity':'0'});
+                        $('.UploadDiv').css({'top':'-200vh'});
+                        $('#uploadImage').empty();
+                        $('#uploadImage').html(reloadHTML);
+                        return;
+                    }
                     console.log(i-count);
                     
                     cropper[i-count].getCroppedCanvas({
@@ -195,13 +200,13 @@
                                            getBlobToUpload(new FormData(),1);break;
                                   case '0' : $('#msg').html("Upload unsucessful");
                                            getBlobToUpload(new FormData(),0);break;
-                                  default : $('#msg').html('hi');
+                                  default : $('#msg').html(data);
                               }
 
 
                           },
-                        error() {
-                          console.log('Upload error');
+                        error(data) {
+                          console.log(data);
                         },
                     });
                     
