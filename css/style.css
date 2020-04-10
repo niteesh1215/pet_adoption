@@ -84,13 +84,15 @@ html {
             .display_ads{margin-top:10px;}
            .card
            {
-            width: 90%;
+            width: 96%;
             min-height: 300px;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
             text-align: center;
             font-family: arial;
-            margin-left: 5%;
+            margin-left: 2%;
             border-radius:50px 15px 100px 15px/15px 100px 15px 100px;
+            margin-top: 10px;
+            margin-bottom: 20px;
             }
             
             .card img
@@ -168,7 +170,7 @@ html {
 /* displaypets end*/
 
 
-/* post-ad-part-2 start*/
+/* post-ad start*/
 
             .background-blur{
                 display: none;
@@ -181,20 +183,32 @@ html {
                 top:0;
                 transition: 1s
             }
-            .imageUploadDiv
+            .UploadDiv
             {
-                position: fixed;
-                top: -200vh;
-                z-index: 5;
+                 position: fixed;
+                 top: -200vh;
+                 z-index: 5;
+                 transition: 1s ease-in-out;
+                 width: 100%;
+            }
+            .imageUploadDiv,.ad-details
+            {
+                position: relative;
                 width: 80%;
                 margin-left: 10%;
                 background: #FBF4DE;
-                border-radius: 0px 0px 225px 75px/0px 0px 15px 255px;
+                border-radius: 0px 0px 50px 50px/0px 0px 200px 200px;
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-                transition: 1s
+                  
+                padding:0;
+                
+            }
+            .imageUploadDiv
+            {
+                display: none;
             }
             
-            .imageUploadDiv header
+            .imageUploadDiv header,.ad-details  header
             {
                 
                 box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -205,8 +219,27 @@ html {
                 color:white;
                 line-height: 50px;
             }
+            .imageUploadDiv header .previous_window,.ad-details header .previous_window
+            {
+                position: absolute;
+                left: 10px;
+                font-size: 30px;
+                line-height: 50px;
+                transition: 1s;
+                cursor: pointer;
+            }
+            .imageUploadDiv header .previous_window:hover,.ad-details header .previous_window:hover
+            {
+                color: yellow;
+                animation: arrow 1s infinite;
+            }
+            @keyframes arrow {
+                0% {left: 10px;}
+                50% {left: 15px;}
+                100% {left: 10px;}
+            }
             
-            .imageUploadDiv header span
+            .imageUploadDiv header .close_window,.ad-details header .close_window
             {
                 position: absolute;
                 right:10px;
@@ -216,10 +249,126 @@ html {
                 transition: 1s;
                 cursor: pointer;
             }
-            .imageUploadDiv header span:hover
+            .imageUploadDiv header .close_window:hover,.ad-details header .close_window:hover
             {
                 color:yellow;
                 transform: rotate(360deg);
+            }
+            
+            .ad-details{
+                overflow-y:scroll;
+                overflow-x: hidden;
+                height: 90vh;
+            }
+            
+            
+            .details_category
+            {
+                width: 90%;
+                margin-left: 5%;
+                margin-top: 20px;
+                padding: 5px;
+               
+            }
+            
+            .form-group
+            {
+                position: relative;
+            }
+           
+            
+            .form-group .dummy_dropdown ,.form-group input[type=text],.form-group textarea
+            {
+                        height: 45px;
+			background-color: #fff;
+			border: none;
+			border-radius: 2px;
+			width: 100%;
+			outline: none;
+                        
+			line-height: 45px;
+                        padding-left: 18px;
+                       
+            }
+            
+            .form-group textarea
+            {
+                padding-top: 10px;
+                line-height:20px;
+                resize: none;
+            }
+            .form-group input[type=text]::placeholder,.form-group textarea::placeholder
+            {
+                color:#b6b6b6;
+                
+            }
+            .form-group .dummy_dropdown
+            {
+                color:#b6b6b6;
+            }
+            .form-group .dummy_dropdown span
+            {
+                position: absolute;
+                right:24px;
+                top:50%;
+                color:#F9575C;
+                font-weight: bold;
+                font-size: 20px;
+                opacity: 0.8;
+                transition: transform 1s;
+                cursor: pointer;
+            }
+            
+            .form-group .options
+            {
+               
+                color: white;
+                width: 100%;
+                height:150px;
+                background: #F9575C;
+                position: absolute;
+                padding: 4px;
+                border-radius: 0px 0px 225px 225px/0px 0px 15px 15px;
+                box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+                z-index: 7;
+                overflow-y: scroll;
+                transition: 0.6s ease-in-out;
+            }
+            
+            .form-group .options p
+            {
+               padding:5px; 
+               line-height: 20px;
+               box-shadow: 0 0px 2px 0px rgba(255, 255, 255, 0.5);
+               transition: 0.5s ease-in-out;
+            }
+            
+            .form-group .options p:hover
+            {
+                background: whitesmoke;
+                color: #F9575C;
+            }
+            
+            .options::-webkit-scrollbar-track
+            {
+               
+            }
+
+            .options::-webkit-scrollbar,.ad-details::-webkit-scrollbar
+            {
+                width: 6px;
+                background-color: transparent;
+            }
+
+            .options::-webkit-scrollbar-thumb,.ad-details::-webkit-scrollbar-thumb
+            {
+                background-color: white;
+                border: 2px solid white;
+            }
+            .invalid-feedback
+            {
+                padding-left: 18px;
+                color:red;
             }
             .preview {
                 width: 100%;
@@ -312,6 +461,7 @@ html {
             {
                 background: #F9575C;
                 color: white;
+                border: 2px solid #F9575C;
             }
             .upload-btn-wrapper:hover > button
             {
