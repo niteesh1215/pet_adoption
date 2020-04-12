@@ -1,26 +1,36 @@
-.navbar{
-    min-height: 100px;
-    margin-bottom: 0px;
-    border:none;
-    border-radius:0; 
-    background-color:#F9BE4F;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.07);
-    display: flex;
-    align-items: center;
+*{margin:0;padding: 0;box-sizing: border-box;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;scroll-behavior: smooth;}
+#header{position: fixed;top: 0;width: 100%;padding: 0 100px;height:100px;display:flex;align-items: center;justify-content: space-between;background-color:#F9BE4F;z-index: 5; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.07);}
+.logo{color:white;text-decoration: none;letter-spacing: 2px;font-weight: bold;  display: flex;align-items: center;justify-content: center;padding: 0px 15px;height: 50px;}
+.logo:hover{text-decoration: none; color: white;}
+.logo p{line-height: 35px;margin: 0;font-size: 20px;}
+#header ul{display: flex;}
+#header ul li{list-style: none;}
+#header ul li a{padding:15px 14px;text-decoration: none; display: inline-block;margin: 0 3px;color:white;}
+#header ul li a:hover{color:white;text-decoration: none;border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;transition: 1s; background-color: rgb(249, 87, 92);}
+.toggle{display: none;}
+.search-area{position: relative;}
+.search-area div{display: flex; align-items: center;justify-content: center;height: 55px;}
+.search-area div input[type=text]{height: 40px;width: 400px; padding-left: 8px;padding-right: 50px; border:2px solid #F9575C; color:rgb(249, 87, 92); background: #fbf4de;  border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;transition: 0.5s ease-in-out;}
+.search-area div input::placeholder{color:grey;font-size: 10px;line-height: 35px;}
+.search-area div span{position: absolute;right:0px; height: 40px; top: 50%; padding:6px 5px;font-size: 25px; color:white; cursor: pointer;background:rgb(249, 87, 92);transform:translateY(-50%);border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;}
+.search-area div span:hover{;color:whitesmoke; }
+.search-area div input:focus{outline: none;}
+
+@media (max-width:992px)
+{
+    .logo{font-size: 50px;}
+    #header ul{position: absolute;top:90px;left:0;width:100%;height:calc( 500px );text-align: center;overflow: auto;transition: 0.5s;flex-direction: column;background-color:#F9BE4F; justify-content: center;transform: translateY(-120%);}
+    #header.active ul{transform: translateY(0);}
+    #header ul li{margin: 10px 0;}
+    #header ul li a{font-size: 30px;}
+    #header.active .toggle:before{top:14px;transform:rotate(45deg);box-shadow: none;}
+    #header.active .toggle:after{bottom:14px;transform:rotate(-45deg);}
+    .toggle{display:block;position: relative;width: 30px;height:30px;cursor: pointer;}
+    .toggle:before{content: '';position:absolute;top:4px;width:100%;height: 2px;background: #fff;z-index: 5;box-shadow: 0 10px 0 #fff;transition:0.5s;}
+    .toggle:after{content: '';position:absolute;bottom:4px;width:100%;height: 2px;background: #fff;z-index: 5;transition: 0.5s;}
 }
-.navbar-brand {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    padding: 0px 15px;
-    font-size: 25px;
-    
-}
-.navbar-brand p{margin-bottom: 0;}
-.navbar-inverse .navbar-brand,
-.navbar-inverse .navbar-nav>li>a{ color:white;}
-.navbar-inverse .navbar-nav>li>a:hover{ border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;transition: 1s; background-color: rgb(249, 87, 92);}
+
+
 
 #bannerImage{
     padding-top:75px;
@@ -81,7 +91,7 @@ html {
               user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
             }
-            .display_ads{margin-top:10px;}
+            .display_ads{margin-top:110px;}
            .card
            {
             width: 96%;
