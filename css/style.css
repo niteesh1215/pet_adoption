@@ -1,3 +1,4 @@
+/* header start  */
 *{margin:0;padding: 0;box-sizing: border-box;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;scroll-behavior: smooth;}
 #header{position: fixed;top: 0;width: 100%;padding: 0 100px;height:100px;display:flex;align-items: center;justify-content: space-between;background-color:#F9BE4F;z-index: 5; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.07);}
 .logo{color:white;text-decoration: none;letter-spacing: 2px;font-weight: bold;  display: flex;align-items: center;justify-content: center;padding: 0px 15px;height: 50px;}
@@ -30,7 +31,88 @@
     .toggle:after{content: '';position:absolute;bottom:4px;width:100%;height: 2px;background: #fff;z-index: 5;transition: 0.5s;}
 }
 
+/* header end */
 
+/* login start */
+.login
+{
+     margin-top: 120px;
+}
+.login .panel 
+{
+   
+    border: 2px solid #F9575C;
+    border-radius: 6px 6px 50px 50px/6px 6px 150px 150px;
+    background: #FBF4DE;
+}
+
+.login .panel .panel-heading
+{
+    background: #F9575C;
+}
+
+ .login .panel .panel-heading h3
+{
+    color:white; text-align: center;
+}
+.login .panel-body
+{
+    margin-bottom: 0;
+    padding: 15px 50px;
+}
+.login .panel-body p
+{
+   
+    color:#F9575C;
+    
+}
+.login .form-group input[type=email],.login .form-group input[type=password],.login .form-group input[type=text],.login .form-group input[type=tel]
+{
+    border: none;
+    border-radius: 355px 45px 225px 75px/15px 225px 15px 255px;
+    height: 40px;
+    padding-left: 9px;
+}
+.login input::placeholder
+{
+    color: #a1a1a1;
+    opacity: 1;
+}
+.login .center
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.login .panel-footer
+{
+    margin-top: 10;
+    margin: 0 50px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    margin: 0;
+    color:#F9575C;
+}
+
+.login .panel-footer a
+{
+    color: orangered;
+    font-weight: bold;
+    animation: register 1s infinite;
+    transition: ease-in-out;
+   
+    
+}
+@keyframes register
+{
+    0%{color: orangered;}
+    50%{ color:grey;}
+    100%(color: orangered;)
+}
+/* login end */
 
 #bannerImage{
     padding-top:75px;
@@ -287,7 +369,7 @@ html {
             }
            
             
-            .form-group .dummy_dropdown ,.form-group input[type=text],.form-group textarea
+            .details_category .form-group .dummy_dropdown ,.details_category .form-group input[type=text],.details_category .form-group textarea
             {
                         height: 45px;
 			background-color: #fff;
@@ -301,13 +383,13 @@ html {
                        
             }
             
-            .form-group textarea
+            .details_category .form-group textarea
             {
                 padding-top: 10px;
                 line-height:20px;
                 resize: none;
             }
-            .form-group input[type=text]::placeholder,.form-group textarea::placeholder
+            .details_category .form-group input[type=text]::placeholder,.details_category .form-group textarea::placeholder
             {
                 color:#b6b6b6;
                 
