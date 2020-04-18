@@ -6,18 +6,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="img/lifestyleStore.png" />
+        
         <title>Petmania Logout</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- latest compiled and minified CSS -->
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-        <!-- jquery library -->
-        <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
-        <!-- Latest compiled and minified javascript -->
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <!-- External CSS -->
-        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <?php include 'dependencies.php'; ?>
     </head>
     <body>
         <div>
@@ -25,17 +16,30 @@
                 require 'header.php';
             ?>
             <br>
-            <div class="container">
-			<center>
+            <div class="container login" style="margin-top: 200px;">
+			
                 <div class="row">
-                    <div class="col-xs-6">
+                    <div class="col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3">
                         <div class="panel panel-primary">
                             <div class="panel-heading"></div>
                             <div class="panel-body">
+				
+                                <script>
+                                    var count=5;
+                                    
+                                    var timer= window.setInterval(function(){
+                                        $('.countdown').empty();
+                                        $('.countdown').append(--count);
+                                        if(count === 0)
+                                        {
+                                            window.clearInterval(timer);
+                                            window.location.replace('index.php');
+                                        }
+                                    },1000);
+                                </script>
 							
+                                <p>You have been logged out. Redirecting to home page in <span class="countdown" style="font-size: 15px; color:gray;padding: 0 3px;">5</span> seconds.</p>
 							
-                                <p>You have been logged out. <a href="login.php">Login again.</a></p>
-							</center>
                             </div>
                         </div>
                     </div>

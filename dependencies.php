@@ -8,7 +8,7 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 <script src="script/cropper.js" defer></script>
-<script src="script/post-ad.js" defer></script>
+<script src="script/universal.js" defer></script>
 <link rel="stylesheet" type="text/css" href="css/cropper.css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="css/search.css" type="text/css">        

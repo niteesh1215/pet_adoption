@@ -9,9 +9,11 @@
                 
                 <div class="row">
                    
-                   
+                    <?php
+                           if(isset($_SESSION['email'])){
+                           ?>
                     <div class="col-lg-4  col-md-12 col-sm-12">
-                       
+                      
                         <div class="details_category">     
                             <div class="form-group">
                                 <input type="text" class="form-control pet_name_input" name="pet_name" placeholder="Pet Name" required="Enter the pet name">
@@ -198,7 +200,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="description" style="color:#b6b6b6;padding-left: 18px;opacity: 0.8;">Description<span style="color: #F9575C; font-size: 12px; font-weight: 100;"> Make it short and sweet</span></label>
+                                <label for="description" style="color:#b6b6b6;padding-left: 18px;opacity: 0.8;"><span style="color: #F9575C; font-size: 12px; font-weight: 100;"> Make it short and sweet</span></label>
                                 <textarea  class="description_input" style="width:100%; height: 140px;"  name="description" placeholder="Description" required="true"></textarea>
                                 <div class="invalid-feedback description_empty hidden">
                                     Please fill this field.
@@ -227,6 +229,11 @@
                                 </div>
                              </div>
                          </div>
+                         <?php
+                           }else{
+                               echo '<p style="width:100%;font-size:30px;text-align:center; color:red; position: absolute; top:50%; transform:translateY(-50%);">Login to Post Ads. <a href="login.php">Click Here</a></p>';
+                           }
+                            ?>
                      </div>   
               
            </div>

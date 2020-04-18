@@ -1,37 +1,26 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html>
 <html>
     <head>
         
         <title>Welcome to the Petmania</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- latest compiled and minified CSS -->
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
-        <!-- jquery library -->
-        <script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
-        <!-- Latest compiled and minified javascript -->
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-        <!-- External CSS -->
-        <link rel="stylesheet" href="css/style.css" type="text/css">
-        <link rel="stylesheet" href="css/search.css" type="text/css">
+        <?php include 'dependencies.php'; ?>
+        
     </head>
     <body>
-	 
-        <div>
-           <?php
+	 <?php
             require 'header.php';
-           ?>
+           ?> 
+        <div id="dynamic_content">
+          
            <div id="bannerImage">
                <div class="container">
                    <center>
                    <div id="bannerContent">
                        <h1>Greatness of a Nation Be Judged by How It Treats Its Animals .</h1>
                        <p>Adopting a pet or finding a new house for the pet</p>
-                       <a href="products.php" class="btn btn-primary">Click here to see all the cute pets</a>
+                       <a href="displaypets.php" class="btn btn-primary">Click here to see all the cute pets</a>
                    </div>
                    </center>
                </div>
@@ -78,6 +67,7 @@ session_start();
                        </div>
                    </div>
                </div>
+               
            </div>
             <br><br> <br><br><br><br>
            <footer class="footer"> 
@@ -87,6 +77,8 @@ session_start();
 			   </center>
                </div>
            </footer>
+           
         </div>
+         <?php include 'post-ad-part-1.php';?>
     </body>
 </html>

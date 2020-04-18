@@ -12,7 +12,12 @@ if($_POST['start']==0)
        if (stripos($txt, $word) !== false) return true;
         else return false;
     }
-
+    
+    function hasWordExact($word, $txt) {
+    $patt = "/(?:^|[^a-zA-Z])" . preg_quote($word, '/') . "(?:$|[^a-zA-Z])/i";
+    return preg_match($patt, $txt);
+    }
+    
     $search_text=filter_var($_POST['search'], FILTER_SANITIZE_STRING);
     $search_query="SELECT ad_id,pet_name,gender FROM ad_info where";
     for($i=0;$i<12;$i++)
@@ -25,9 +30,9 @@ if($_POST['start']==0)
     {
         switch($column_array[$i])
         {
-        case "gender":for($j=0;$j<1;$j++)
+        case "gender":for($j=0;$j<2;$j++)
                       {
-                        switch(hasWord($gender[$j], $search_text))
+                        switch(hasWordExact($gender[$j], $search_text))
                         {
                             case 1:$search_query=$search_query." ".$column_array[$i]."=".$j." AND";
                         }
@@ -71,7 +76,7 @@ if($_POST['start']==0)
        if($column_array[$i] == "gender" or $column_array[$i] == "size") break;
     }
     }
-
+    
     $search_query =substr($search_query, 0, -3);
     $_SESSION['search_query']=$search_query;
     

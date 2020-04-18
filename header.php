@@ -50,6 +50,22 @@
         fetchSearchResults();
         search_load=true;
     }
+    
+    function login()
+    {
+         //document.getElementById("dynamic_content").innerHTML='<object type="text/php" data="login.php" ></object>';
+         $("#dynamic_content").load("login.php");
+    }
+    
+    function signUp()
+    {
+        $("#dynamic_content").load("signup.php");
+    }
+    
+    function logOut()
+    {
+        $("#dynamic_content").load("logout.php");
+    }
 </script>
 <header id="header" class="">
             <a href="index.php" class="logo"><span class="material-icons" style="font-size: 35px; margin-right:  8px; color:rgb(249, 87, 92);">pets</span><p>Petmania</p></a>
@@ -70,13 +86,13 @@
                            ?>
                            <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Wishlist</a></li>
                            <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Acount Settings</a></li>
-                           <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                           <li><a href="javascript:logOut();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                            <?php
                            }else{
                             ?>
                            
-                            <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                           <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li><a href="javascript:signUp();"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                           <li><a href="javascript:login();"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                            <?php
                            }
                            ?>

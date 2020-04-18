@@ -98,7 +98,7 @@
                     $adoption_rules=filter_var($_POST['adoption_rules'], FILTER_SANITIZE_STRING);
                     
                     $ad_id= rand(100000000,999999999).time();
-                    $user_id="niteesh";
+                    $user_id=$_SESSION['id'];
                     $_SESSION['ad_id']=$ad_id;
                     $query="insert into ad_info(ad_id,user_id,pet_name,pet_category,breed,gender,age,age_type,size,vaccinated,neutured,weight,city_village,district,state,description,about_pet,adoption_rules)".
                             " values('". $ad_id."','".$user_id."','".$pet_name."','".$pet_category."','".$breed."',".$gender.",".$age.",'".$age_type."',".$size.",".$vaccinated.",".$neutured.",".$weight.",'".$city_village."','".$district."','".$state."','".$description."','".$about_pet."','".$adoption_rules."')";
