@@ -1,4 +1,5 @@
 
+//post ad start
 var breed = [['catbreed1','catbreed2','catbreed3'],['dogbreed1','dogbreed2','dogbreed3'],['fishbreed1','fishbreed2','fishbreed3']];
 var reloadHTML;
 
@@ -15,11 +16,13 @@ $(document).on('click', '#postAdLink', function()
 
 });        
 
-$(document).on('click', '.close_window', function()
+$(document).on('click', '.close_window',close_ad_window);
+
+function close_ad_window()
 {
     $('.background-blur').css({'display':'none','opacity':'0'});
     $('.UploadDiv').css({'top':'-200vh'});
-});
+}
 
 $(document).on('click', '.previous_window', function()
 {
@@ -157,4 +160,79 @@ function selectOption(el)
     {
         updateBreed(elem.firstChild.textContent);
     }
+}
+//post ad end 
+
+
+//wishlist start
+function favorite_toggle(elem,id)
+{
+    var str = elem.innerHTML;
+    if (!str.localeCompare("favorite_border"))
+    {
+        wishlist_toggle(id,1,elem);
+    } else
+    {
+        wishlist_toggle(id,0,elem);
+    }
+    
+}
+
+function wishlist_toggle(id,flag,elem)
+{
+        const formData = new FormData();
+        formData.append('id',id);
+        formData.append('flag',flag);
+                $.ajax({
+                    url: 'wishlist_add_remove.php',
+                    method: 'POST',
+                    data: formData,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) 
+                    {   if(data && flag)
+                        {
+                            elem.innerHTML = "favorite";
+                            elem.style.color = "#f9575c";
+                        }
+                        else if(data && !flag)
+                        {
+                             elem.innerHTML = "favorite_border";
+                             elem.style.color = "#cccccc";
+                        }
+                    },
+                    error(data) {
+                        console.log(data);
+                    }
+                });     
+}
+function remove_from_wishlist(id,flag,row_id)
+{
+    const formData = new FormData();
+        formData.append('id',id);
+        formData.append('flag',flag);
+                $.ajax({
+                    url: 'wishlist_add_remove.php',
+                    method: 'POST',
+                    data: formData,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) 
+                    {  
+                        if(data) $('#'+row_id).css("display","none");
+                    },
+                    error(data) {
+                        console.log(data);
+                    }
+                });   
+}
+// wishlist end
+
+function close_dynamic_window()
+{
+    $("#dynamic_content").css("visibility","hidden");
+    $("#dynamic_content").empty();
+    
 }
