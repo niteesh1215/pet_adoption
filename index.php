@@ -13,6 +13,8 @@ session_start();
             require 'header.php';
            ?> 
         <div id="dynamic_content">
+            
+        </div>
           
            <div id="bannerImage">
                <div class="container">
@@ -78,7 +80,7 @@ session_start();
                </div>
            </footer>
            
-        </div>
+        
          <?php include 'post-ad-part-1.php';?>
     </body>
 </html>

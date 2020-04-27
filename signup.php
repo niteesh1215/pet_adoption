@@ -1,27 +1,9 @@
-<?php
-    require 'connection.php';
-    session_start();
-    if(isset($_SESSION['email'])){
-        header('location: displaypets.php');
-    }
-?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        
-        <title>Petmania Sign Up</title>
-        <?php include 'dependencies.php'; ?>
-    </head>
-    <body>
-        <div>
-            <?php
-                require 'header.php';
-            ?>
-            <br><br>
             <div class="signup login">
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-lg-offset-4 col-sm-offset-3">
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                        <div class="close_wrapper">
+                            <span class="close_btn" onclick="close_dynamic_window()">x</span>
                         <div class="panel">
                         <div class="panel-heading">
                                 <h3>SIGN UP</h3>
@@ -59,6 +41,7 @@
                         </form>
                         </div>
                     </div>
+                        </div>
                     </div>
                 </div>
                 <script>
@@ -102,7 +85,3 @@
             </script>
             </div>
             
-
-        </div>
-    </body>
-</html>

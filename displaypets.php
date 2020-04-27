@@ -16,7 +16,9 @@
           include 'header.php';
         ?> 
         
-        
+ <div id="dynamic_content">
+            
+ </div>       
  <div class="display_ads">
             
            
@@ -142,23 +144,7 @@
                 
                 
                 
-                function favorite_toggle(elem)
-                {
-                    
-                    var str = elem.innerHTML;
-                    if(!str.localeCompare("favorite_border"))
-                    {
-                        elem.innerHTML="favorite";
-                        elem.style.color="#f9575c";
-                    }
-                    else
-                    {
-                        elem.innerHTML="favorite_border";
-                        elem.style.color="#cccccc";
-                    }
-                    
-                   
-                }
+                
             </script>
     </body>
 </html>

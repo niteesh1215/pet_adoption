@@ -32,8 +32,22 @@ while($rows=mysqli_fetch_array($result))
         case 1: echo '<p style="color: #ed2ccb; padding-right: 8px; font-size: 30px;text-align: center; margin: 0;">F</p>';
             break;
     }
-    echo'<span class="material-icons favorites noselect"  onclick="favorite_toggle(this)">favorite_border</span>'
-    . '</div>'
+    if(isset($_SESSION['id'])){
+        
+        $query="SELECT * FROM wishlist where ad_id =".$rows['ad_id']." and user_id =".$_SESSION['id'];
+        $result_wishlist = mysqli_query( $connection,$query) 
+         or die ($query. " ".mysqli_error($connection));
+        switch (mysqli_num_rows($result_wishlist))
+        {
+        case 0:echo'<span class="material-icons favorites noselect"  onclick="favorite_toggle(this,'.$rows['ad_id'].')">favorite_border</span>';break;
+        case 1:echo'<span class="material-icons favorites noselect"  style="color:#F9575C;" onclick="favorite_toggle(this,'.$rows['ad_id'].')">favorite</span>';break;
+        }
+    }
+ else {
+     $message="'Please Login/Signup to add this item to your wishlist'";
+     echo '<span class="material-icons favorites noselect"  onclick="alert('.$message.');">favorite_border</span>';
+ }
+    echo '</div>'
     . '</div>'
     . '<div id="'.$rows['ad_id'].'" class="more_info_btn"><a href="#">More info</a></div>'
     . '</div>'

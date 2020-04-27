@@ -54,17 +54,40 @@
     function login()
     {
          //document.getElementById("dynamic_content").innerHTML='<object type="text/php" data="login.php" ></object>';
+         $("#dynamic_content").css("visibility","visible");
          $("#dynamic_content").load("login.php");
     }
     
     function signUp()
     {
+        $("#dynamic_content").css("visibility","visible");
         $("#dynamic_content").load("signup.php");
     }
     
     function logOut()
     {
+        $("#dynamic_content").css("visibility","visible");
         $("#dynamic_content").load("logout.php");
+    }
+    function wishlist()
+    {
+        $("#dynamic_content").css("visibility","visible");
+        $("#dynamic_content").empty();
+        $.ajax({
+                    url: 'wishlist.php',
+                    method: 'POST',
+                    data: '',
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) 
+                    {   
+                        $("#dynamic_content").append(data);
+                    },
+                    error(data) {
+                        console.log(data);
+                    }
+                });     
     }
 </script>
 <header id="header" class="">
@@ -84,7 +107,7 @@
                 <?php
                            if(isset($_SESSION['email'])){
                            ?>
-                           <li><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Wishlist</a></li>
+                           <li><a href="javascript:wishlist();"><span class="glyphicon glyphicon-shopping-cart"></span> Wishlist</a></li>
                            <li><a href="settings.php"><span class="glyphicon glyphicon-cog"></span> Acount Settings</a></li>
                            <li><a href="javascript:logOut();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                            <?php
