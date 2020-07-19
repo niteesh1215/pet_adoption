@@ -18,7 +18,7 @@ echo'<div class="close_wrapper"><span class="close_btn" onclick="close_dynamic_w
         $result_ad_info = mysqli_query($connection, $query)
             or die($query . " " . mysqli_error($connection));
        
-            echo'<div class="ad-row" id="'.$i.'row">'.
+            echo'<div class="ad-row col-xs-6 col-sm-6 col-md-10 col-md-offset-1 col-lg-offset-1 col-lg-10 " id="'.$i.'row">'.
                 '<div><span class="material-icons" title="remove from cart" onclick=remove_from_wishlist('.$rows['ad_id'].',0,"'.$i.'row")>highlight_off</span>';
                 
             while ($url = mysqli_fetch_array($result_image)) {
@@ -27,12 +27,13 @@ echo'<div class="close_wrapper"><span class="close_btn" onclick="close_dynamic_w
             echo'</div>';
             while ($ad_info = mysqli_fetch_array($result_ad_info)) {
                 
-                echo '<p class="name">'.$ad_info['pet_name'].' </p>';
+                echo '<p class="name" style="font-weight:bold;">'.$ad_info['pet_name'].' </p>';
                 switch ($ad_info['available'])
                 {
                     case NULL:
-                    case 0 :echo '<p class="status" style="color:red;">No longer available</p>';break;
                     case 1 :echo '<p class="status" style="color:#675444;">Available</p>';break;
+                    case 0 :echo '<p class="status" style="color:red;">No longer available</p>';break;
+                    
                 }
                 
             }

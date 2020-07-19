@@ -231,7 +231,7 @@
                          </div>
                          <?php
                            }else{
-                               echo '<p style="width:100%;font-size:30px;text-align:center; color:red; position: absolute; top:50%; transform:translateY(-50%);">Login to Post Ads. <a href="login.php">Click Here</a></p>';
+                               echo '<p style="width:100%;font-size:15px;text-align:center; color:red; position: absolute; top:50%; transform:translateY(-50%);">Login to Post Ads. <a href="javascript:open_login();">Click Here</a></p>';
                            }
                             ?>
                      </div>   
@@ -239,7 +239,13 @@
            </div>
            <?php include 'post-ad-part-2.php';?>
        </div>
-
+              <script> 
+                  function open_login()
+                  {
+                      close_ad_window();
+                      login();
+                  }
+              </script>
           </form>
            
     

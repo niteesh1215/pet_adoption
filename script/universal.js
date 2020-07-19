@@ -1,6 +1,6 @@
 
 //post ad start
-var breed = [['catbreed1','catbreed2','catbreed3'],['dogbreed1','dogbreed2','dogbreed3'],['fishbreed1','fishbreed2','fishbreed3']];
+var breed = [['Siamese','Persian','Maine Coons','Ragdoll','Bengals','Abyssinian','Birmans'],['Labrador Retrievers','German Shepherds','Golden Retrievers','French Bulldogs','Bulldogs','Beagles','Poodles','Rottweilers'],['Betta','Goldfish','Angelfish','Catfish','Guppies']];
 var reloadHTML;
 
 $(document).ready(function(){
@@ -12,7 +12,7 @@ $(document).on('click', '#postAdLink', function()
 {
     
     $('.background-blur').css({'display': 'inherit', 'opacity': '0.5'});
-    $('.UploadDiv').css({'top': '10px'});
+    $('.UploadDiv').css({'top': '90px'});
 
 });        
 
@@ -221,7 +221,10 @@ function remove_from_wishlist(id,flag,row_id)
                     contentType: false,
                     success: function (data) 
                     {  
-                        if(data) $('#'+row_id).css("display","none");
+                        if(data){ 
+                            $('#'+row_id).remove();
+                            
+                        }
                     },
                     error(data) {
                         console.log(data);
@@ -236,3 +239,17 @@ function close_dynamic_window()
     $("#dynamic_content").empty();
     
 }
+
+//profile
+function close_update_profile_window()
+{
+    $(".update_profile").css({'top': '-110vh', 'visibility': 'hidden'});
+    $(".update_profile_content").empty();
+    
+}
+function update_profile_img()
+{
+    $(".update_profile").css({'top': '0', 'visibility': 'visible'});
+    $(".update_profile_content").load("update_profile_img_form.php");
+}
+//profile end

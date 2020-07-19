@@ -1,6 +1,5 @@
   <div class="login">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3 col-xs-12">
                         <div class="close_wrapper">
                             <span class="close_btn" onclick="close_dynamic_window()">x</span>
                         <div class="panel">
@@ -26,7 +25,6 @@
                         </div>
                         </div>
                     </div>
-                </div>
            </div>
             <script>
                 $('#loginForm').submit(function (e) {

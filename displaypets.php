@@ -72,7 +72,17 @@
                 
                  
                     $(document).ready(function(){
-                        fetchAds();
+                        
+                        var search =  '<?php if(strlen($_GET['search']) != 0) echo $_GET['search']; ?>';
+                        if(search.length !==0 )
+                        {
+                            $('.search').val(search);
+                            searchAds();
+                        }
+                        else
+                        {
+                            fetchAds();
+                        }
                         
                     });
                 

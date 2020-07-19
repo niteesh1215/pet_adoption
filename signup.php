@@ -1,7 +1,7 @@
 
             <div class="signup login">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3">
+                
+                    <div class="col-lg-6 col-sm-6 col-lg-offset-3 col-sm-offset-3 col-xs-12">
                         <div class="close_wrapper">
                             <span class="close_btn" onclick="close_dynamic_window()">x</span>
                         <div class="panel">
@@ -22,7 +22,7 @@
                             </div>
                             
                              <div class="form-group">
-                                <input type="password" class="form-control confirm-pass" name="password" placeholder="Confirm Password" required="true" pattern=".{6,}">
+                                <input type="password" class="form-control confirm-pass" name="password" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" oninvalid="this.setCustomValidity('Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters')" oninput="this.setCustomValidity('')"  required>
                                 <p class="confirm-pass-invalid" style="text-align: center; color: red;"></p>
                             </div>
                             
@@ -43,7 +43,7 @@
                     </div>
                         </div>
                     </div>
-                </div>
+               
                 <script>
                 $('#signUpForm').submit(function (e) {
                     
@@ -71,7 +71,7 @@
                         success: function (data) {
                               switch(data)
                               {
-                                  case '1' :window.location.replace('displaypets.php'); break;
+                                  case '1' :window.location.replace('index.php'); break;
                                   default:  $('.signup_fail').empty();$('.signup_fail').append(data);
                               }
 

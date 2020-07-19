@@ -22,16 +22,16 @@ session_start();
                    <div id="bannerContent">
                        <h1>Greatness of a Nation Be Judged by How It Treats Its Animals .</h1>
                        <p>Adopting a pet or finding a new house for the pet</p>
-                       <a href="displaypets.php" class="btn btn-primary">Click here to see all the cute pets</a>
+                       <a href="displaypets.php?search=" class="btn btn-primary">Click here to see all the cute pets</a>
                    </div>
                    </center>
                </div>
            </div>
-           <div class="container">
+           <div class="container  ">
                <div class="row">
-                   <div class="col-xs-4">
-                       <div  class="thumbnail">
-                           <a href="products.php">
+                   <div class="col-xs-4 ">
+                       <div  class="thumbnail category_card">
+                           <a href="displaypets.php?search=dogs">
                                 <img src="img/dogs.jpg" alt="Camera">
                            </a>
                            <center>
@@ -42,9 +42,9 @@ session_start();
                            </center>
                        </div>
                    </div>
-                   <div class="col-xs-4">
-                       <div class="thumbnail">
-                           <a href="products.php">
+                   <div class="col-xs-4 ">
+                       <div class="thumbnail category_card">
+                           <a href="displaypets.php?search=cats">
                                <img src="img/cats.jpg" alt="Cats">
                            </a>
                            <center>
@@ -55,9 +55,9 @@ session_start();
                            </center>
                        </div>
                    </div>
-                   <div class="col-xs-4">
-                       <div class="thumbnail">
-                           <a href="products.php">
+                   <div class="col-xs-4 ">
+                       <div class="thumbnail category_card">
+                           <a href="displaypets.php?search=fishes">
                                <img src="img/fishes.jpg" alt="Fishes">
                            </a>
                            <center>
