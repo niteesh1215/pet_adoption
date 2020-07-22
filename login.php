@@ -21,7 +21,7 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="panel-footer">Don't have an account yet? <a href="signup.php">Register</a></div>
+                            <div class="panel-footer">Don't have an account yet? <a href="javascript:signUp();">Register</a></div>
                         </div>
                         </div>
                     </div>

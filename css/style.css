@@ -334,14 +334,14 @@ html {
                 height:100%;
                 z-index: 4;
                 top:0;
-                transition: 1s
+                transition: 0.5s;
             }
             .UploadDiv
             {
                  position: fixed;
                  top: -200vh;
                  z-index: 5;
-                 transition: 1s ease-in-out;
+                 transition: 0.5s ease-in-out;
                  width: 100%;
             }
             .imageUploadDiv,.ad-details
@@ -378,13 +378,13 @@ html {
                 left: 10px;
                 font-size: 30px;
                 line-height: 50px;
-                transition: 1s;
+                transition: .3s;
                 cursor: pointer;
             }
             .imageUploadDiv header .previous_window:hover,.ad-details header .previous_window:hover
             {
                 color: yellow;
-                animation: arrow 1s infinite;
+                animation: arrow 0.5s infinite;
             }
             @keyframes arrow {
                 0% {left: 10px;}
@@ -399,7 +399,7 @@ html {
                 font-size: 30px;
                 line-height: 50px;
                 color:white;
-                transition: 1s;
+                transition: .3s;
                 cursor: pointer;
             }
             .imageUploadDiv header .close_window:hover,.ad-details header .close_window:hover
@@ -468,7 +468,7 @@ html {
                 font-weight: bold;
                 font-size: 20px;
                 opacity: 0.8;
-                transition: transform 1s;
+                transition: transform 0.5s;
                 cursor: pointer;
             }
             
@@ -485,7 +485,7 @@ html {
                 box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
                 z-index: 7;
                 overflow-y: scroll;
-                transition: 0.6s ease-in-out;
+                transition: 0.2s ease-in-out;
             }
             
             .form-group .options p
@@ -493,7 +493,7 @@ html {
                padding:5px; 
                line-height: 20px;
                box-shadow: 0 0px 2px 0px rgba(255, 255, 255, 0.5);
-               transition: 0.5s ease-in-out;
+               transition: 0.2s ease-in-out;
             }
             
             .form-group .options p:hover

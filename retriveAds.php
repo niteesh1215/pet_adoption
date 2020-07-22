@@ -33,15 +33,15 @@ while($rows=mysqli_fetch_array($result))
          or die ($query. " ".mysqli_error($connection));
         switch (mysqli_num_rows($result_wishlist))
         {
-        case 0:echo'<div class="circle_avatar"><span class="material-icons favorites noselect"  onclick="favorite_toggle(this,'.$rows['ad_id'].')">favorite_border</span></div>';break;
-        case 1:echo'<div class="circle_avatar"><span class="material-icons favorites noselect"  style="color:#F9575C;" onclick="favorite_toggle(this,'.$rows['ad_id'].')">favorite</span></div>';break;
+        case 0:echo'<div class="circle_avatar"><span class="material-icons favorites noselect"  onclick=favorite_toggle(this,"'.$rows['ad_id'].'")>favorite_border</span></div>';break;
+        case 1:echo'<div class="circle_avatar"><span class="material-icons favorites noselect"  style="color:#F9575C;" onclick=favorite_toggle(this,"'.$rows['ad_id'].'")>favorite</span></div>';break;
         }
     }
  else {
      $message="'Please Login/Signup to add this item to your wishlist'";
      echo '<div class="circle_avatar"><span class="material-icons favorites noselect"  onclick="alert('.$message.');">favorite_border</span></div>';
  }
-     echo'<div id="'.$rows['ad_id'].'" class="more_info_btn"><a href="#">More info</a></div>'
+     echo'<div id="'.$rows['ad_id'].'" class="more_info_btn"><a href="displaypetsdetails.php?id='.$rows['ad_id'].'">More info</a></div>'
     . '</div>'
              . '</div>';
 }

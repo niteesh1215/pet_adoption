@@ -14,7 +14,7 @@
                     }
                     /*else if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
                         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";}*/
-                    else if ($_FILES["photo"]["size"]> 3000000) 
+                    else if ($_FILES["photo"]["size"]> 10000000) 
                     {
                             echo  2;
                             unset($_POST);

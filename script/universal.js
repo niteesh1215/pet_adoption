@@ -180,6 +180,7 @@ function favorite_toggle(elem,id)
 
 function wishlist_toggle(id,flag,elem)
 {
+        
         const formData = new FormData();
         formData.append('id',id);
         formData.append('flag',flag);

@@ -8,9 +8,7 @@ require 'connection.php';
         <title>
             
         </title>
-        <!--<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script> -->
+        
         <?php include 'dependencies.php'; ?>
         <style>
             html,body {
@@ -250,7 +248,7 @@ require 'connection.php';
                 width: auto; 
                 height: auto;
                 cursor: pointer;
-                max-width: 100%;
+                width: 100%;
             }
             
             .edit
@@ -398,7 +396,7 @@ require 'connection.php';
     </head>
     <body>
         <?php
-        $query = "SELECT * FROM users where id=".$_SESSION['id'];
+        $query = "SELECT * FROM users where id='".$_SESSION['id']."'";
         $result = mysqli_query($connection, $query)
                 or die($query . " " . mysqli_error($connection));
         
@@ -532,7 +530,12 @@ require 'connection.php';
            success: function(data)
            {
                
-               location.reload();
+               if(data == 1)
+               {
+                   alert("Details Updated Sucessfully");
+                   location. reload(true);
+                   // show response from the php script.
+           }else
                alert(data);
        }
          });
@@ -560,13 +563,8 @@ $("#update_password").submit(function(e) {
            data: form.serialize(), // serializes the form's elements.
            success: function(data)
            {
-               if(data === 1)
-               {
-                   alert("Details Updated Sucessfully");
-                   location. reload();
-                   // show response from the php script.
-           }
-           else
+               location.reload();
+
                alert(data);
        }
          });
@@ -587,7 +585,7 @@ function deleteAd(id)
            {
                if(data == 1)
                {
-                   location. reload();
+                   location. reload(true);
          // show response from the php script.
            }
            else

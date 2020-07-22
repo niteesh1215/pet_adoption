@@ -38,7 +38,7 @@ echo'<div class="close_wrapper"><span class="close_btn" onclick="close_dynamic_w
                 
             }
                
-            echo'<div id="'.$rows['ad_id'].'" class="more_info_btn"><a href="#">More info</a></div></div>'; 
+            echo'<div id="'.$rows['ad_id'].'" class="more_info_btn"><a href="displaypetsdetails.php?id='.$rows['ad_id'].'">More info</a></div></div>'; 
         }
     
 echo '</div></div>';  
