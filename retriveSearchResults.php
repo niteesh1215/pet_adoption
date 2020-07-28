@@ -4,7 +4,7 @@ require 'connection.php';
 
 if($_POST['start']==0)
 {
-    $gender=Array("male","female");
+    /*$gender=Array("male","female");
     $column_array=Array("pet_name","pet_category","breed","gender","age","size","vaccinated","neutured","weight","city_village","district","state");
     $size=Array("small","medium","large");
     $result;
@@ -75,9 +75,31 @@ if($_POST['start']==0)
         }
        if($column_array[$i] == "gender" or $column_array[$i] == "size") break;
     }
-    }
+    }*/
+    $search_text=filter_var($_POST['search'], FILTER_SANITIZE_STRING);
+    $search_query ="SELECT * FROM ad_info
+    WHERE MATCH (pet_name,pet_category,breed,gender,city_village,district,state)
+    AGAINST ('$search_text' IN NATURAL LANGUAGE MODE )";
     
-    $search_query =substr($search_query, 0, -3);
+    /*$search_query = "SELECT *
+FROM ad_info
+WHERE
+(
+    pet_name LIKE '%$search_text%'
+    OR pet_category LIKE '%$search_text%'
+    OR breed LIKE '%$search_text%'
+    OR breed LIKE '%$search_text%'
+    OR gender LIKE '%$search_text%'
+    OR age LIKE '%$search_text%'
+    OR size LIKE '%$search_text%'
+    OR vaccinated LIKE '%$search_text%'
+    OR neutured LIKE '%$search_text%'    
+    OR weight LIKE '%$search_text%' 
+    OR city_village LIKE '%$search_text%' 
+    OR district LIKE '%$search_text%'
+    OR state LIKE '%$search_text%'     
+)";*/
+    
     $_SESSION['search_query']=$search_query;
     
     $result = mysqli_query( $connection,$search_query." limit 12") 

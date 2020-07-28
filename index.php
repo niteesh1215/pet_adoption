@@ -31,7 +31,7 @@ session_start();
                <div class="row">
                    <div class="col-xs-4 ">
                        <div  class="thumbnail category_card">
-                           <a href="displaypets.php?search=dogs">
+                           <a href="displaypets.php?search=dog">
                                 <img src="img/dogs.jpg" alt="Camera">
                            </a>
                            <center>
@@ -44,7 +44,7 @@ session_start();
                    </div>
                    <div class="col-xs-4 ">
                        <div class="thumbnail category_card">
-                           <a href="displaypets.php?search=cats">
+                           <a href="displaypets.php?search=cat">
                                <img src="img/cats.jpg" alt="Cats">
                            </a>
                            <center>
@@ -57,7 +57,7 @@ session_start();
                    </div>
                    <div class="col-xs-4 ">
                        <div class="thumbnail category_card">
-                           <a href="displaypets.php?search=fishes">
+                           <a href="displaypets.php?search=fish">
                                <img src="img/fishes.jpg" alt="Fishes">
                            </a>
                            <center>
