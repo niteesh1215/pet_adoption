@@ -16,11 +16,11 @@
                             <div class="lost_found_details">
                                 <div class="type">
                                 <div>
-                                <input type="radio" id="male" name="type" value="found">
+                                    <input type="radio" id="male" name="type" value="found" onclick="hideAge()">
                                 <label for="male">Found</label><br>
                                 </div>
                                 <div>
-                                <input type="radio" id="female" name="type" value="lost">
+                                    <input type="radio" id="female" name="type" value="lost" checked="true" onclick="showAge()">
                                 <label for="female">Lost</label><br>    
                                 </div>
                                 </div>
@@ -30,7 +30,7 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" name="breed" placeholder="Pet breed" required="true" >
                             </div> 
-                            <div class="form-group">
+                            <div class="form-group age">
                                 <input type="text" class="form-control" name="age" placeholder="Pet age" required="true">
                             </div>
                             
@@ -43,7 +43,7 @@
                                 <input type="text" class="form-control" name="species" placeholder="Species" required="true">
                             </div>
                             <div class="form-group">    
-                                <textarea name="description" placeholder="Description" required="true"></textarea>
+                                <textarea name="description" placeholder="Description" required="true" style="width: 100%; height: 100px;" ></textarea>
                             </div>    
                              <div class="form-group">
                                  <input style="margin-left: 50%; transform: translateX( -50% );" type="button" class="btn" value="Next" onclick="goToImageUpload()">
@@ -70,6 +70,14 @@
                         </div>
                     </div>
     <script>
+        
+        function hideAge(){
+            $('.age').css('display','none');
+        }
+        function showAge(){
+            $('.age').css('display','block');
+        }
+        
         function goToImageUpload(){
             $('.lost_found_details').css('display','none');
             $('.upload_img').css('display','block');

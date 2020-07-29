@@ -1,8 +1,8 @@
 <?php
 session_start();
 require 'connection.php';
-
-$query="SELECT id,lost_name,lost_breed,lost_species,img1 FROM lost_pets";
+$indicator ='lost';
+$query="SELECT id,".$indicator."_name,".$indicator."_breed,".$indicator."_species,img1 FROM ".$indicator."_pets";
 $result = mysqli_query( $connection,$query) 
   or die ($query. " ".mysqli_error($connection));
 ?>
@@ -34,8 +34,8 @@ while($rows=mysqli_fetch_array($result))
         echo '<img src="' . $rows['img1'] . '" class="img-responsive">';
     
     echo '<div class="card_body">' .
-    '<h6 class="">' . $rows['lost_name'] . '</h6>'
-            . '<p>'.$rows['lost_species'].' &#9679; '.$rows['lost_breed'].'</p>'
+    '<h6 class="">' . $rows[$indicator.'_name'] . '</h6>'
+            . '<p>'.$rows[$indicator.'_species'].' &#9679; '.$rows[$indicator.'_breed'].'</p>'
             . '</div>';
 
     

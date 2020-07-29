@@ -107,8 +107,8 @@ session_start();
                             " values('". $name."','".$breed."',".$age.",'".$address."','".$species."','".$description."')";
                     }else{
                         $_SESSION['type']='found';  
-                        $query="insert into found_pets(found_name,found_breed,found_age,found_address,found_species,description)".
-                            " values('". $name."','".$breed."',".$age.",'".$address."','".$species."','".$description."')";   
+                        $query="insert into found_pets(found_name,found_breed,found_address,found_species,description)".
+                            " values('". $name."','".$breed."','".$address."','".$species."','".$description."')";   
                     }    
                     $result = mysqli_query( $connection,$query) 
                         or die ($query. " ".mysqli_error($connection));
